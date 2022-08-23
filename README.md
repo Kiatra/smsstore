@@ -46,6 +46,18 @@ Run the server
 
 `./smsserve`
 
+### Usage for automatic login to a site with a OTP (one time password) 
+
+#### Forwarding the message
+Install the app "SMS an PC/Telefon - Automatische Umleitung" on your andrioid phone.
+
+Configure an SMS forwarding to a REST server and anter the url of your server e.g.: `curl "https://localhost/messages/?user=test&pass=1234"`
+
+#### Autologon
+
+Install the Tempermonkey brower extention
+
+Adapt the provided "example_userscript.js# userscript to retrieve the message form the server and fill out the web logon form 
 
 
 
