@@ -12,9 +12,9 @@
 
 
 //adapt to your values before use
-var user = "your site login user"
-var pass = "your site login pass"
-var otpSmsUrl = "https://yoursever.com/messages/?user=dau&pass=1234"
+var user = "your site login user";
+var pass = "your site login pass";
+var otpSmsUrl = "https://yoursever.com/messages/?user=dau&pass=1234";
 
 //also adapt the match url above and the selectors ids for user and password below to match your login site 
 //all document.getElementById() and document.getElementById() calls.
@@ -27,8 +27,8 @@ function check4login(){
     var d = document.getElementById("login")
     if (d){ // found destination, send user and pw
         console.log("Tampering: found id login");
-        document.getElementById("login").value = pass;
-        document.getElementById("passwd").value = user;
+        document.getElementById("login").value = user;
+        document.getElementById("passwd").value = pass;
         document.querySelector('#nsg-x1-logon-button').click()
         check4response()
     }
@@ -59,7 +59,7 @@ function check4response(){
 
 function fetchResponse(){
     console.log("Tampering: fetching response...");
-    unsafeWindow.fetch(otpSmsUrl)
+    fetch(otpSmsUrl)
           .then((response) => response.text().then(responseCallback));
 }
 
