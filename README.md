@@ -47,7 +47,7 @@ Run the server
 `./smsserve`
 
 ### Turning it into a service
-Create a file called /etc/systemd/system/smsstore.service:
+Create a file called `/etc/systemd/system/smsstore.service:`
 
 ```
 [Unit]
@@ -68,9 +68,11 @@ WantedBy=multi-user.target
 - set the proper path to your script in ExecStart=
 
 Start the service:
+
 `systemctl start smsstore`
 
 To get it to automatically get it to start on boot:
+
 `systemctl enable smsstore`
 
 ### Usage for automatic login to a site with a OTP (one time password) 
