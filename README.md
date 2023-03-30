@@ -46,6 +46,33 @@ Run the server
 
 `./smsserve`
 
+### Turning it into a service
+Create a file called /etc/systemd/system/smsstore.service:
+
+```
+[Unit]
+Description=smsstore service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=centos
+ExecStart=/opt/smsstore/smsserve
+
+[Install]
+WantedBy=multi-user.target
+```
+- set your actual username after User=
+- set the proper path to your script in ExecStart=
+
+Start the service:
+`systemctl start smsstore`
+
+To get it to automatically get it to start on boot:
+`systemctl enable smsstore`
+
 ### Usage for automatic login to a site with a OTP (one time password) 
 
 #### Forwarding the message
